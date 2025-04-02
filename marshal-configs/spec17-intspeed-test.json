@@ -7,6 +7,7 @@
   "rootfs-size" : "3GiB",
   "outputs" : ["/output"],
   "post_run_hook" : "handle-results.py -d test -s intspeed",
+  "files": [["./speckle/spec17-run-scripts/intspeed.sh", "/"]],
   "jobs" : [
     {
       "name": "600.perlbench_s",
