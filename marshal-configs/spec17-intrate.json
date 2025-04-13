@@ -7,15 +7,11 @@
   "rootfs-size" : "3GiB",
   "outputs" : ["/output"],
   "post_run_hook" : "handle-results.py -d ref -s intrate",
-  "files": [["./speckle/spec17-run-scripts/intrate.sh", "/"]],
+  "files": [["./speckle/spec17-run-scripts/intrate.sh", "/"], ["./pmu/read_counters", "/"]],
   "jobs" : [
     {
       "name": "500.perlbench_r",
       "command": "./intrate.sh 500.perlbench_r --copies 4"
-    },
-    {
-      "name": "502.gcc_r",
-      "command": "./intrate.sh 502.gcc_r --copies 4"
     },
     {
       "name": "505.mcf_r",
