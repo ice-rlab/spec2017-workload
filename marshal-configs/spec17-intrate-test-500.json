@@ -5,13 +5,13 @@
   "host-init" : "build-intrate.sh test",
   "overlay" : "speckle/build/overlay/intrate/test",
   "rootfs-size" : "3GiB",
-  "outputs" : ["/output"],
+  "outputs" : ["/output", "/cpi/"],
   "post_run_hook" : "handle-results.py -d test -s intrate",
-  "files": [["./speckle/spec17-run-scripts/intrate.sh", "/"], ["./pmu/read_counters", "/"]],
+  "files": [["./speckle/spec17-run-scripts/intrate.sh", "/"],["./pmu/perf", "/"], ["./pmu/read_counters", "/"]],
   "jobs" : [
     {
       "name": "500.perlbench_r",
-      "command": "/read_counters && ./intrate.sh 500.perlbench_r --copies 4 && /read_counters "
+      "command": "mkdir -p /cpi/ && /perf ./intrate.sh 500.perlbench_r --copies 1"
     }
   ]
 }

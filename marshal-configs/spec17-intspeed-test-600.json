@@ -7,11 +7,11 @@
   "rootfs-size" : "3GiB",
   "outputs" : ["/output"],
   "post_run_hook" : "handle-results.py -d test -s intspeed",
-  "files": [["./speckle/spec17-run-scripts/intspeed.sh", "/"], ["./pmu/read_counters", "/"]],
+    "files": [["./speckle/spec17-run-scripts/intrate.sh", "/"],["./pmu/perf", "/"], ["./pmu/read_counters", "/"]],
   "jobs" : [
     {
       "name": "657.xz_s-cld",
-      "command": "./intspeed.sh 657.xz_s --workload 1 --threads 1"
+      "command": "mkdir -p /cpi/ && /perf ./intspeed.sh 657.xz_s --workload 1 --threads 1"
     }
   ]
 }
