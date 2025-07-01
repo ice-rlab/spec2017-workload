@@ -8,5 +8,5 @@
     "outputs" : ["/output", "/cpi/"],
     "post_run_hook" : "handle-results.py -d ref -s intrate",
     "files": [["./speckle/spec17-run-scripts/intrate.sh", "/"], ["./pmu/perf", "/"], ["./run_all_intrate.sh", "/"]],
-    "command_": "bash run_all_intrate.sh"
+    "command": "bash run_all_intrate.sh"
   }
