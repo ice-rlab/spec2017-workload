@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 jobs=(
   "/perf ./intrate.sh 505.mcf_r --copies 1"
   "/perf ./intrate.sh 520.omnetpp_r --copies 1"
